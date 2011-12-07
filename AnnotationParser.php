@@ -40,7 +40,7 @@ class AnnotatedClass extends ReflectionClass implements AnnotationParsing {
 		// Get all the annotations
 		$this->annotations = $this->parser->getParams();
 		
-		if(isset($this->annotations[$annotation])) return true;
+		if(array_key_exists($annotation, $this->annotations)) return true;
 		else return false;
 	}
 	
@@ -98,7 +98,7 @@ class AnnotatedMethod extends ReflectionMethod implements AnnotationParsing {
 		// Get all the annotations
 		$this->annotations = $this->parser->getParams();
 		
-		if(isset($this->annotations[$annotation])) return true;
+		if(array_key_exists($annotation, $this->annotations)) return true;
 		else return false;
 	}
 	
